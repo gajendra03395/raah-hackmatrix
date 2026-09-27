@@ -1,0 +1,28 @@
+{
+  "name": "raah-prototype",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "RAAH — Risk-Aware Aid & Access Hub. Flood warning & response coordination for Pimpri-Chinchwad (PCMC).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "11.11.17",
+    "leaflet": "1.9.4",
+    "lucide-react": "0.454.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-leaflet": "4.2.1",
+    "three": "0.160.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.3",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.14",
+    "vite": "5.4.10"
+  }
+}

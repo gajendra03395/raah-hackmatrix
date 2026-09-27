@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>RAAH — Risk-Aware Aid &amp; Access Hub</title>
+    <meta name="theme-color" content="#3B6FE0" />
+    <!-- Apply the saved / preferred theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var t =
+            localStorage.getItem("raah_theme") ||
+            (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.style.colorScheme = t;
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="RAAH turns fragmented flood data into a coordinated, evidence-backed rescue plan."
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

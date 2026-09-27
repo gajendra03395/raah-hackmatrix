@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Theme tokens -------------------------------------------------------- */
+/* Values are space-separated RGB channels so Tailwind can apply /opacity. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --paper: 251 251 252;
+  --paper-panel: 255 255 255;
+  --paper-sunken: 244 245 247;
+
+  --line: 231 233 238;
+  --line-strong: 215 218 225;
+
+  --ink-900: 21 24 30;
+  --ink-700: 43 48 59;
+  --ink-600: 66 74 87;
+  --ink-500: 90 100 114;
+  --ink-400: 130 139 153;
+
+  --accent: 59 111 224;
+  --accent-soft: 234 240 252;
+  --accent-ink: 39 79 166;
+  --accent-strong: 39 79 166;
+
+  --scrim: 21 24 30;
+  --scrollbar: 215 218 225;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Calm, slightly blue-tinted slate — on-brand for the flood/water theme.
+     panel is the lightest (elevated cards), sunken the darkest (recessed insets). */
+  --paper: 17 20 26;
+  --paper-panel: 30 35 44;
+  --paper-sunken: 22 26 33;
+
+  --line: 45 51 63;
+  --line-strong: 62 69 83;
+
+  /* ink is the foreground ramp — inverted to light in the dark theme */
+  --ink-900: 237 239 243;
+  --ink-700: 199 205 214;
+  --ink-600: 174 181 192;
+  --ink-500: 150 158 171;
+  --ink-400: 122 131 145;
+
+  --accent: 96 146 246;
+  --accent-soft: 30 45 74;
+  --accent-ink: 156 190 255;
+  --accent-strong: 62 112 214;
+
+  --scrim: 4 6 10;
+  --scrollbar: 62 69 83;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--paper));
+  color: rgb(var(--ink-900));
+  font-feature-settings: "cv02", "cv03", "cv04", " cv11";
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* thin, quiet scrollbars that follow the theme */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--scrollbar)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--scrollbar));
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes raah-pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* utility for the animated dashed route flow */
+@keyframes raah-dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.route-flow {
+  animation: raah-dash-flow 0.9s linear infinite;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet — quiet the default chrome so the map matches the neutral theme */
+.leaflet-container {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background: #edf1f5;
+}
+[data-theme="dark"] .leaflet-container {
+  background: #10141b;
+}
+.raah-map-label.leaflet-tooltip {
+  background: rgba(255, 255, 255, 0.88);
+  border: none;
+  box-shadow: none;
+  padding: 0 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #2b303b;
+  border-radius: 5px;
+}
+[data-theme="dark"] .raah-map-label.leaflet-tooltip {
+  background: rgba(18, 22, 30, 0.82);
+  color: #e6e9ef;
+}
+.raah-map-label.leaflet-tooltip::before {
+  display: none;
+}
+.leaflet-popup-content {
+  margin: 10px 12px;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+/* dark popups + controls */
+[data-theme="dark"] .leaflet-popup-content-wrapper,
+[data-theme="dark"] .leaflet-popup-tip {
+  background: #1e232c;
+  color: #e6e9ef;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+[data-theme="dark"] .leaflet-bar a,
+[data-theme="dark"] .leaflet-control-attribution {
+  background: #1e232c;
+  color: #aeb6c2;
+}
+[data-theme="dark"] .leaflet-control-attribution a {
+  color: #6f9bf0;
+}
