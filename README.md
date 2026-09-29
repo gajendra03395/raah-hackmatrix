@@ -1,5 +1,21 @@
 # RAAH — Risk-Aware Aid & Access Hub
 
+## Live Demo
+
+**RAAH is now live!**
+
+[Launch RAAH — Live Application](https://raah-hackmatrix.vercel.app/)
+
+Experience our interactive flood-response coordination
+platform with dynamic routing, rescue-team allocation,
+risk prioritization and evidence-backed alerts.
+
+**Developed by:** Team UnScripted  
+**Hackathon:** HackMatrix 5.0  
+**Deployment:** Vercel
+
+---
+
 A working prototype of the **Local Disaster Warning & Response Coordination Platform**
 (HackMatrix 5.0 · Team UnScripted).
 
